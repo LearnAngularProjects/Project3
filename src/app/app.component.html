@@ -1,0 +1,7 @@
+<p>Getting data from parent to child</p>
+<app-child-input [displayGreeting]="greeting()"></app-child-input>
+
+<p>Sending data from child to parent</p>
+<p [ngStyle]="{'color': title === 'demo' ? 'green' : 'red'}">Guess the word</p>
+<app-child-output (bindEmitter)="getTextFromChild($event)"></app-child-output>
+<p *ngIf="title==='demo'">{{title}} you guessed the correct word</p>
